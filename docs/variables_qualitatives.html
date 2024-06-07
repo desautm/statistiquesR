@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./variables_qualitatives.html">Les types de variables</a></li><li class="breadcrumb-item"><a href="./variables_qualitatives.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les variables qualitatives</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./variables_qualitatives.html">Les tableaux</a></li><li class="breadcrumb-item"><a href="./variables_qualitatives.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les variables qualitatives</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -158,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Les types de variables</span></a>
+ <span class="menu-text">Les tableaux</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Les différentes mesures</span></a>
+ <span class="menu-text">Les graphiques</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -195,20 +195,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">L’extension <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Les différentes mesures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mesures_tendance_centrale.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les mesures de tendance centrale</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures de tendance centrale</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mesures_dispersion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures de dispersion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Les mesures de dispersion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mesures_position.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Les mesures de position</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les mesures de position</span></span></a>
   </div>
 </li>
       </ul>
@@ -228,18 +245,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#tableau-de-fréquences" id="toc-tableau-de-fréquences" class="nav-link active" data-scroll-target="#tableau-de-fréquences"><span class="header-section-number">1.1</span> Tableau de fréquences</a></li>
-  <li><a href="#représentation-graphique---le-diagramme-à-bandes" id="toc-représentation-graphique---le-diagramme-à-bandes" class="nav-link" data-scroll-target="#représentation-graphique---le-diagramme-à-bandes"><span class="header-section-number">1.2</span> Représentation graphique - Le diagramme à bandes</a>
-  <ul class="collapse">
-  <li><a href="#la-variable-marital" id="toc-la-variable-marital" class="nav-link" data-scroll-target="#la-variable-marital"><span class="header-section-number">1.2.1</span> La variable <code>marital</code></a></li>
-  <li><a href="#la-variable-relig" id="toc-la-variable-relig" class="nav-link" data-scroll-target="#la-variable-relig"><span class="header-section-number">1.2.2</span> La variable <code>relig</code></a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/desautm/statistiquesR/edit/main/variables_qualitatives.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./variables_qualitatives.html">Les types de variables</a></li><li class="breadcrumb-item"><a href="./variables_qualitatives.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les variables qualitatives</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./variables_qualitatives.html">Les tableaux</a></li><li class="breadcrumb-item"><a href="./variables_qualitatives.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les variables qualitatives</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-variablesqualitatives" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les variables qualitatives</span></span></h1>
 </div>
@@ -302,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>valid = FALSE</code>; permet de ne pas afficher les données manquantes</li>
 <li><code>total = TRUE</code>; permet d’afficher le total</li>
 </ul>
-<p>Dans la base de données <code>forcats::gss_cat</code>, nous allons afficher la variable <code>marital</code>. Dans la commande ci-dessous, nous enregistrons le tableau de fréquences dans la variable <code>tab_marital</code>.</p>
+<p>Dans la base de données <code>forcats::gss_cat</code>, nous allons afficher la variable <code>marital</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">freq</span>(gss_cat<span class="sc">$</span>marital,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">cum =</span> <span class="cn">FALSE</span>,</span>
@@ -317,95 +329,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Married       10117  47.1</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Total         21483 100.0</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="représentation-graphique---le-diagramme-à-bandes" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="représentation-graphique---le-diagramme-à-bandes"><span class="header-section-number">1.2</span> Représentation graphique - Le diagramme à bandes</h2>
-<p>Pour représenter graphiquement les variables qualitatives, nous allons utiliser les diagrammes à bandes.</p>
-<p>Pour construire ce graphique:</p>
-<ul>
-<li>Chaque modalité est représentée par un rectangle.</li>
-<li>La hauteur de chaque rectangle doit être proportionnelle
-<ul>
-<li>au nombre d’unités statistiques (la fréquence absolue) OU</li>
-<li>au pourcentage d’unités statistiques (la fréquence relative).</li>
-</ul></li>
-<li>Le titre et les fréquences (absolues ou relatives) doivent être indiqués.</li>
-<li>L’axe des x doit posséder un titre : le nom de la variable étudiée.</li>
-<li>L’axe des y doit posséder un titre : “Nombre d’unités statistiques” ou “Pourcentage d’unités statistiques”.</li>
-<li>La graduation de l’axe des y doit commencer à zéro (l’axe ne doit pas être coupé).</li>
-<li>Les rectangles doivent être équidistants et de largeur égale. De plus, ils ne doivent pas être collés.</li>
-</ul>
-<p>Pour produire le diagramme à bandes, nous utiliserons l’extension <code>ggplot2</code> qui est chargée avec le coeur de la librairie <code>tidyverse</code>. La grammaire graphique de <code>ggplot2</code> peut être décrite de la façon suivante:</p>
-<blockquote class="blockquote">
-<p><strong>A statistical graphic is a <code>mapping</code> of <code>data</code> variables to <code>aes</code>thetic attributes of <code>geom</code>etric objects.</strong></p>
-</blockquote>
-<p>Plus spécifiquement, nous pouvons briser un graphique en trois composantes essentielles:</p>
-<ol type="1">
-<li><code>data</code>: la base de données contenant les variables que nous désirons visualiser.</li>
-<li><code>geom</code>: l’objet géométrique en question. Ceci réfère au type d’objet que nous pouvons observer dans notre graphique. Par exemple, des points, des lignes, des barres, etc.</li>
-<li><code>aes</code>: les attributs esthétiques (aesthetics) de l’objet géométrique que nous affichons dans notre graphique. Par exemple, la position x/y, la couleur, la forme, la taille. Chaque attribut peut être associé à une variable dans notre base de données.</li>
-</ol>
-<section id="la-variable-marital" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="la-variable-marital"><span class="header-section-number">1.2.1</span> La variable <code>marital</code></h3>
-<p>Nous allons visualiser le diagramme à bandes de la variable <code>marital</code> provenant de la base de données <code>forcats::gss_cat</code>. Nous devons spécifier:</p>
-<ul>
-<li><code>data = gss_cat</code>: la base de données.</li>
-<li><code>aes(x = marital)</code>: la variable étudiée.</li>
-<li><code>geom_bar()</code>: nous voulons un diagramme à bandes</li>
-</ul>
-<p>La commande est donc:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gss_cat, <span class="fu">aes</span>(<span class="at">x =</span> marital))<span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="variables_qualitatives_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Pour ajouter un titre et indiquer les titres des axes x et y, nous utilisons la commande <code>labs</code> (pour <em>labels</em>).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gss_cat, <span class="fu">aes</span>(<span class="at">x =</span> marital))<span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Répartition de 21 483 personnes selon leur statut matrimonial"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Statut matrimonial"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nombre d'unités statistiques"</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="variables_qualitatives_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="la-variable-relig" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="la-variable-relig"><span class="header-section-number">1.2.2</span> La variable <code>relig</code></h3>
-<p>Nous pouvons afficher le diagramme à bandes horizontales de la variable <code>relig</code> en ajoutant la commande <code>coord_flip()</code>. Nous avons donc:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> gss_cat, <span class="fu">aes</span>(<span class="at">x =</span> relig))<span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Répartition de 21 483 personnes selon leur religion"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Religion"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nombre d'unités statistiques"</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="variables_qualitatives_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

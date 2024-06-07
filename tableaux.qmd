@@ -1,0 +1,146 @@
+# Les tableaux {#sec-variablesqualitatives}
+
+{{< include _setup.qmd >}}
+
+Une fois les données d’un sondage recueillies, il est plus aisé d’analyser ces données si elles sont classées dans un tableau. 
+
+Nous utiliserons l'extension `nycflights13` avec les bases de données `planes`, `weather` et `flights` pour montrer la création de tableaux en `R`.
+
+```{r}
+library(nycflights13)
+data(planes)
+data(weather)
+data(flights)
+```
+
+## Tableau de fréquences à une variable
+
+### Les variables qualitatives
+
+Le tableau de fréquences que nous utiliserons est le suivant:
+
+|                                      Titre                                                          ||
+|:----------------------:|:--------------------------------:|:----------------------------------------:|
+| **Nom de la variable** | **Nombre d'unités statistiques** | **Pourcentage d'unités statistiques** (%)|
+|      (_Modalités_)     |      (_Fréquences absolues_)     |         (_Fréquences relatives_)         |
+|        **Total**       |                _n_               |                   100%                   |
+
+> Important : Le titre doit toujours être indiqué lors de la construction d’un tableau de fréquence.
+
+Lorsque les données se trouvent dans une `tibble` dans `R`, il est possible d'utiliser la commande `freq` de la librairie `questionr` pour afficher le tableau de fréquences. La commande `freq` prend comme argument la variable dont vous voulez produire le tableau de fréquences. Pour obtenir une sortie adéquate, il faut ajouter trois options à la commande:
+
+- `cum = FALSE`; permet de ne pas afficher les pourcentages cumulés
+- `valid = FALSE`; permet de ne pas afficher les données manquantes
+- `total = TRUE`; permet d'afficher le total
+
+Dans la base de données `nycflights13::planes`, nous allons afficher la variable `engine`, qui correspond au type de moteur de l'avion.
+
+```{r}
+freq(planes$engine,cum = FALSE,valid = FALSE,total = TRUE)
+```
+
+### Les variables quantitatives discrètes
+
+Le tableau de fréquences que nous utiliserons est le suivant :
+
+|                                                         Titre                                                                           ||
+|:----------------------:|:--------------------------------:|:----------------------------------------:|:---------------------------------:|
+| **Nom de la variable** | **Nombre d'unités statistiques** | **Pourcentage d'unités statistiques** (%)| **Pourcentage cumulé**            |
+|      (_Valeurs_)       |      (_Fréquences absolues_)     |         (_Fréquences relatives_)         | (_Fréquences relatives cumulées_) |
+|        **Total**       |                _n_               |                   100%                   |                                   |
+
+Le pourcentage cumulé permet de déterminer le pourcentage des répondants qui ont indiqué la valeur correspondante, ou une plus petite. Il sert à donner une meilleure vue d’ensemble. 
+
+> Si pour la valeur $x_i$ de la variable $A$ la pourcentage cumulé est de $b$ %, ceci signifie que $b$ % des valeurs de la variable $A$ sont plus petites ou égales à $x_i$.
+
+La commande `freq` prend comme argument la variable dont vous voulez produire le tableau de fréquences. Pour obtenir une sortie adéquate, il faut ajouter trois options à la commande:
+
+- `cum = TRUE`; permet d'afficher les pourcentages cumulés
+- `valid = FALSE`; permet de ne pas afficher les données manquantes
+- `total = TRUE`; permet d'afficher le total
+
+Dans la base de données `nycflights13::planes`, nous allons afficher la variable `engines`, qui correspond au nombre de moteurs de l'avion.
+
+```{r}
+freq(planes$engines,cum = TRUE,valid = FALSE,total = TRUE)
+```
+
+Dans la base de données `nycflights13::planes`, nous allons afficher la variable `seats`, qui correspond au nombre de sièges de l'avion.
+
+```{r}
+freq(planes$seats,cum = TRUE,valid = FALSE,total = TRUE)
+```
+
+Comme nous pouvons le constater, le tableau est très grand car la variable `seats` possède `r length(unique(planes$seats))` valeurs différentes.
+
+### Les variables quantitatives continues
+
+Le tableau de fréquences que nous utiliserons est le suivant :
+
+|                                                         Titre                                                                           ||
+|:----------------------:|:--------------------------------:|:----------------------------------------:|:---------------------------------:|
+| **Nom de la variable** | **Nombre d'unités statistiques** | **Pourcentage d'unités statistiques** (%)| **Pourcentage cumulé**            |
+|      (_Classes_)       |      (_Fréquences absolues_)     |         (_Fréquences relatives_)         | (_Fréquences relatives cumulées_) |
+|        **Total**       |                _n_               |                   100%                   |                                   |
+
+Pour être en mesure de briser une variable en classes, il faut utiliser la commande `cut`.
+
+Les options de `cut` sont:
+
+- `include.lowest = TRUE` qui permet d'avoir un intervalle fermé à droite et ouvert à gauche;
+- `breaks` qui permet d'indiquer à quel endroit on doit créer les classes;
+- `seq(from = A, to = B, by = C)` permet de créer un vecteur comportant les valeurs de `A` jusqu'à `B` en faisant des bonds de `C`.
+
+Pour simplifier le code, nous créons en premier lieu une variable `air_time_rec` avec les classes et nous l'affichons ensuite avec `freq`. Remarquons que nous avons ajouté l'option `valid = TRUE` car certaines valeurs sont manquantes. Rappelons que les données manquantes sont représentées par `NA` en `R`. Deux colonnes sont ajoutées:
+
+- `val%`: le pourcentage en omettant les valeurs manquantes
+- `val%cum`: le pourcentage cumulé en omettant les valeurs manquantes
+
+Nous obtenons donc:
+
+```{r}
+air_time_rec <- cut(flights$air_time, 
+                    right=FALSE,
+                    breaks=seq(from = 0, to = 700, by = 100))
+freq(air_time_rec,cum = TRUE,total = TRUE,valid = TRUE)
+```
+
+## Tableau de fréquences à deux variables
+
+Faire une analyse bivariée, c'est étudier la relation entre deux variables : sont-elles liées ? les valeurs de l'une influencent-elles les valeurs de l'autre ? ou sont-elles au contraire indépendantes ?
+
+À noter qu'on va parler ici d'influence ou de lien, mais pas de relation de cause à effet. Les outils présentés permettent de visualiser ou de déterminer une relation, mais la mise en évidence de liens de causalité proprement dit est nettement plus complexe : il faut en effet vérifier que c'est bien telle variable qui influence telle autre et pas l'inverse, qu'il n'y a pas de "variable cachée", etc.
+
+Là encore, le type d'analyse ou de visualisation est déterminé par la nature qualitative ou quantitative des deux variables.
+
+### Croisement de deux variables qualitatives
+
+On continue à travailler avec le jeu de données tiré de l'enquête *Histoire de vie* inclus dans l'extension `questionr`. On commence donc par charger l'extension, le jeu de données, et à le renommer en un nom plus court pour gagner un peu de temps de saisie au clavier.
+
+```{r}
+library(questionr)
+data(hdv2003)
+d <- hdv2003
+```
+
+Quand on veut croiser deux variables qualitatives, on fait un *tableau croisé*. Comme pour un tri à plat ceci s'obtient avec la fonction `table` de R, mais à laquelle on passe cette fois deux variables en argument. Par exemple, si on veut croiser la catégorie socio-professionnelle et le sexe des enquêtés :
+
+```{r}
+table(d$qualif, d$sexe)
+```
+
+Pour pouvoir interpréter ce tableau on doit passer du tableau en effectifs au tableau en pourcentages ligne ou colonne. Pour cela, on peut utiliser les fonctions `lprop` et `cprop` de l'extension `questionr`, qu'on applique au tableau croisé précédent.
+
+Pour calculer les pourcentages ligne :
+
+```{r}
+tab <- table(d$qualif, d$sexe)
+lprop(tab)
+```
+
+Et pour les pourcentages colonne :
+
+```{r}
+cprop(tab)
+```
+

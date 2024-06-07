@@ -1,0 +1,33 @@
+# Les variables qualitatives {#sec-variablesqualitatives}
+
+{{< include _setup.qmd >}}
+
+## Tableau de fréquences
+
+Une fois les données d’un sondage recueillies, il est plus aisé d’analyser ces données si elles sont classées dans un tableau. 
+
+Le tableau de fréquences que nous utiliserons est le suivant:
+
+|                                      Titre                                                          ||
+|:----------------------:|:--------------------------------:|:----------------------------------------:|
+| **Nom de la variable** | **Nombre d'unités statistiques** | **Pourcentage d'unités statistiques** (%)|
+|      (_Modalités_)     |      (_Fréquences absolues_)     |         (_Fréquences relatives_)         |
+|        **Total**       |                _n_               |                   100%                   |
+
+> Important : Le titre doit toujours être indiqué lors de la construction d’un tableau de fréquence.
+
+Lorsque les données se trouvent dans une `tibble` dans `R`, il est possible d'utiliser la commande `freq` de la librairie `questionr` pour afficher le tableau de fréquences. La commande `freq` prend comme argument la variable dont vous voulez produire le tableau de fréquences. Pour obtenir une sortie adéquate, il faut ajouter trois options à la commande:
+
+- `cum = FALSE`; permet de ne pas afficher les pourcentages cumulés
+- `valid = FALSE`; permet de ne pas afficher les données manquantes
+- `total = TRUE`; permet d'afficher le total
+
+Dans la base de données `forcats::gss_cat`, nous allons afficher la variable `marital`.
+
+```{r}
+freq(gss_cat$marital,
+            cum = FALSE,
+            valid = FALSE,
+            total = TRUE)
+```
+

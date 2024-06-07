@@ -21,17 +21,15 @@ book:
     collapse-level: 2
   chapters:
     - index.qmd
-    - part: "Les types de variables"
+    - part: "Les tableaux"
       chapters: 
-        - variables_qualitatives.qmd
-        - variables_quantitatives_discretes.qmd
-        - variables_quantitatives_continues.qmd
+        - tableaux.qmd
+    - part: "Les graphiques"
+      chapters: 
+        - ggplot2.qmd
     - part: "Les différentes mesures"
       chapters:
-        - mesures_tendance_centrale.qmd
-        - mesures_dispersion.qmd
-        - mesures_position.qmd
-    - part: "La visualisation des données"
+        - mesures.qmd
 
 bibliography: references.bib
 
