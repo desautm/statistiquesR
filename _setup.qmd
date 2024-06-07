@@ -1,0 +1,20 @@
+```{r}
+#| label: setup
+#| include: false
+#| cache: false
+
+library(knitr)
+library(questionr)
+library(tidyverse)
+library(nycflights13)
+
+knitr::opts_chunk$set(
+    cache = TRUE,
+    echo = TRUE,
+    comment = "#>",
+    collapse = TRUE
+)
+
+options(max.print = 200)
+options(scipen = 1000)
+```

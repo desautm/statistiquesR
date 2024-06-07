@@ -2,15 +2,36 @@ project:
   type: book
   output-dir: docs
 
+lang: fr
+
 book:
-  title: "statistiquesR"
+  title: "Les statistiques avec R"
   author: "Marc-André Désautels"
-  date: "2024-06-06"
+  date: today
+  language: fr
+  output-file: statistiques_avec_r
+  downloads: [pdf]
+  url: https://desautm.github.io/statistiquesR/
+  repo-url: https://github.com/desautm/statistiquesR/
+  repo-actions: [edit]
+  search: true
+  reader-mode: true
+  sidebar:
+    style: "docked"
+    collapse-level: 2
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - part: "Les types de variables"
+      chapters: 
+        - variables_qualitatives.qmd
+        - variables_quantitatives_discretes.qmd
+        - variables_quantitatives_continues.qmd
+    - part: "Les différentes mesures"
+      chapters:
+        - mesures_tendance_centrale.qmd
+        - mesures_dispersion.qmd
+        - mesures_position.qmd
+    - part: "La visualisation des données"
 
 bibliography: references.bib
 

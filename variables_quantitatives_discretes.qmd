@@ -1,0 +1,74 @@
+# Les variables quantitatives discrètes {#sec-variablesquantitativesdiscretes}
+
+{{< include _setup.qmd >}}
+
+## Tableau de fréquences {#sec-tabfreqquantdiscr}
+
+Une fois les données d’un sondage recueillies, il est plus aisé d’analyser ces données si elles sont classées dans un tableau. 
+
+Le tableau de fréquences que nous utiliserons est le suivant :
+
+|                                                         Titre                                                                           ||
+|:----------------------:|:--------------------------------:|:----------------------------------------:|:---------------------------------:|
+| **Nom de la variable** | **Nombre d'unités statistiques** | **Pourcentage d'unités statistiques** (%)| **Pourcentage cumulé**            |
+|      (_Valeurs_)       |      (_Fréquences absolues_)     |         (_Fréquences relatives_)         | (_Fréquences relatives cumulées_) |
+|        **Total**       |                _n_               |                   100%                   |                                   |
+
+Le pourcentage cumulé permet de déterminer le pourcentage des répondants qui ont indiqué la valeur correspondante, ou une plus petite. Il sert à donner une meilleure vue d’ensemble. 
+
+> Si pour la valeur $x_i$ de la variable $A$ la pourcentage cumulé est de $b$ %, ceci signifie que $b$ % des valeurs de la variable $A$ sont plus petites ou égales à $x_i$.
+
+La commande `freq` prend comme argument la variable dont vous voulez produire le tableau de fréquences. Pour obtenir une sortie adéquate, il faut ajouter trois options à la commande:
+
+- `cum = TRUE`; permet d'afficher les pourcentages cumulés
+- `valid = FALSE`; permet de ne pas afficher les données manquantes
+- `total = TRUE`; permet d'afficher le total
+
+Dans la base de données `nycflights13::planes`, nous allons afficher la variable `engines`. Dans la commande ci-dessous, nous enregistrons le tableau de fréquences dans la variable `tab_engines`. Nous l'affichons ensuite à l'aide de la commande `kable`.
+
+```{r}
+freq(planes$engines,
+                cum = TRUE,
+                valid = FALSE,
+                total = TRUE)
+```
+
+Nous allons maintenant produire le tableau de fréquences de la variable `seats` de la base de données `nycflights13`. Cette variable correspond au nombre de sièges par avion (pour avoir cette information, vous pouvez utiliser la commande  `?nycflights13::planes`). Nous avons:
+
+```{r}
+freq(planes$seats,
+                cum = TRUE,
+                valid = FALSE,
+                total = TRUE)
+```
+
+Comme nous pouvons le constater, le tableau est très grand car la variable `seats` possède `r length(unique(planes$seats))` valeurs différentes. Nous allons donc parfois séparer nos valeurs en classes comme nous le verrons au @sec-variablesquantitativescontinues.
+
+## Représentation graphique - Le diagramme à bandes
+
+Le graphique utilisé pour représenter une variable quantitative discrète est le diagramme à bâtons. 
+
+Ce graphique est construit comme le diagramme à bandes rectangulaires verticales, sauf que les rectangles sont remplacés par des bâtons très minces (généralement une simple ligne). Pour modifier la largeur de vos lignes, vous utilisez l'option `width` dans la commande `geom_bar()`.
+
+```{r}
+ggplot(data = planes, aes(x = engines))+
+  geom_bar(width = 0.1)+
+  labs(
+    title = "Répartition de 3 322 avions selon le nombre de leurs moteurs",
+    x = "Nombre de moteurs",
+    y = "Nombre d'unités statistiques"
+  )
+```
+
+Vous pouvez produire un diagramme à bâtons horizontaux en utilisant la commande `coord_flip()`.
+
+```{r}
+ggplot(data = gss_cat, aes(x = tvhours))+
+  geom_bar(width = 0.1)+
+  labs(
+    title = "Répartition de 11 137 répondants selon le nombre d'heures de télévision écoutées par jour",
+    x = "Nombre d'heures de télévision",
+    y = "Nombre d'unités statistiques"
+  )+
+  coord_flip()
+```

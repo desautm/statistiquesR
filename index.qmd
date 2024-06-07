@@ -1,5 +1,5 @@
-# Preface {.unnumbered}
+# Préface {.unnumbered}
 
-This is a Quarto book.
+Ceci est un livre Quarto.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Pour en apprendre davantage sur Quarto, visitez <https://quarto.org/docs/books>.
