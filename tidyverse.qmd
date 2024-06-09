@@ -52,7 +52,7 @@ Le `tidyverse` permet aussi de:
 
 Pour en savoir plus, nous invitons le lecteur à se rendre au site du `tidyverse` [https://www.tidyverse.org/](https://www.tidyverse.org/). Le `tidyverse` est en grande partie issu des travaux de [Hadley Wickham](http://hadley.nz/).
 
-## Les tidy data {#tidydata}
+## Les tidy data {#sec-tidydata}
 
 Le `tidyverse` est en partie fondé sur le concept de *tidy data*, développé à l'origine par Hadley Wickham dans un article du *Journal of Statistical Software*. Nous pourrions traduire ce concept par *données bien rangées*.
 
@@ -86,29 +86,6 @@ Voici un exemple de données *tidy* qui sont accessibles dans la librairie `tidy
 diamonds
 ```
 
-## Les tibbles {#tibbles}
-
-Une autre particularité du *tidyverse* est que ces extensions travaillent avec des tableaux de données au format *tibble*, qui est une évolution plus moderne du classique *data frame* du R de base. Ce format est fourni est géré par l'extension du même nom (`tibble`), qui fait partie du coeur du *tidyverse*. La plupart des fonctions des extensions du *tidyverse* acceptent des *data frames* en entrée, mais retournent un objet de classe `tibble`.
-
-Pour être en mesure d'effectuer des  calculs statistiques, il nous faut une structure qui soit en mesure de garder en mémoire une base de données. Ces structures se nomment des "tibbles" dans R.
-
-### Un exemple de **tibble**
-
-Pour comprendre ce qu'est un **tibble**, nous allons utiliser deux librairies: `nycflights13` et `diamonds`. Si ce n'est pas déjà fait, vous devez les installer et ensuite les charger.
-
-```{r}
-library(nycflights13)
-library(ggplot2)
-```
-
-Nous allons étudier le paquetage `nycflights13`qui contient 5 bases de données contenant des informations concernant les vols intérieurs en partance de New York en 2013, à partir des aéroports de Newark Liberty International (EWR), John F. Kennedy International (JFK) ou LaGuardia (LGA). Les 5 bases de données sont les suivantes:
-
-- flights: information sur les 336,776 vols
-- airlines: lien entre les codes IATA de deux lettres et les noms de compagnies d'aviation (16 au total)
-- planes: information de construction sur les 3 322 avions utilisés
-- weather: données météo à chaque heure (environ 8 710 observations) pour chacun des trois aéroports.
-- airports: noms des aéroports et localisations
-
 ### La base de données flights
 
 Pour visualiser facilement une base de données sous forme **tibble**, il suffit de taper son nom dans la console. Nous allons utiliser la base de données flights. Par exemple:
@@ -126,30 +103,11 @@ Nous allons décortiquer la sortie console:
 - Nous avons ensuite 10 lignes d'obervations correspondant à 10 vols
 - `... with 336,766 more rows, and 12 more variables:` nous indique que 336 766 lignes et 12 autres variables ne pouvaient pas être affichées à l'écran.
 
-Malheureusement cette sortie écran ne nous permet pas d'explorer les données correctement. Nous verrons à la section \@ref(explorertibbles) comment explorer des **tibbles**.
+Malheureusement cette sortie écran ne nous permet pas d'explorer les données correctement. Nous verrons à la section @sec-explorertibbles comment explorer des **tibbles**.
 
-### La base de données **diamonds** {#donneesdiamonds}
+### Comment explorer des "tibbles" {#sec-explorertibbles}
 
-La base de données **diamonds** est composée des variables suivantes:
-
-- `price` : prix en dollars US
-- `carat` : poids du diamant en grammes
-- `cut` : qualité de la coupe (Fair, Good, Very Good, Premium, Ideal)
-- `color` : couleur du diamant (J (pire) jusqu'à D (meilleur))
-- `clarity` : une mesure de la clarté du diamant (I1 (pire), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (meilleur))
-- `x` : longueur en mm
-- `y` : largeur en mm
-- `z` : hauteur en mm
-- `depth` : z / mean(x, y) = 2 * z / (x + y)
-- `table` : largeur du dessus du diamant par  rapport à son point le plus large
-
-```{r}
-diamonds
-```
-
-### Comment explorer des "tibbles" {#explorertibbles}
-
-Voici les façons les plus communes de comprendre les données se trouvant à l'intérieur d'un "tibble":
+Voici les façons les plus communes de comprendre les données se trouvant à l'intérieur d'un **tibble**:
 
 - En utilisant la fonction `View()` de RStudio.C'est la commande que nous utiliserons le plus fréquemment.
 - En utilisant la fonction `glimpse()`.
