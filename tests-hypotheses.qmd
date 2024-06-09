@@ -82,3 +82,21 @@ p_sex <- prop_test(  x = gss,
 La variable `p_value` nous permet de conserver ou de rejetter $H_0$. En effet, dans notre cas, la valeur est de `r p_sex$p_value` qui est plus grande que le risque d'erreur de 1% (associé au niveau de confiance de 99%). On conserve donc $H_0$, la proportion de femmes ne semble pas être plus petite que 51%.
 
 ## Les tests d'hypothèses sur une différence de moyennes
+
+```{r}
+t_test(x = gss,
+       response = age,
+       explanatory = sex,
+       alternative = "two-sided",
+       mu = 1)
+```
+
+
+## Les tests d'hypothèses sur une différence de proportions
+
+```{r}
+prop_test(gss,
+          response = college,
+          explanatory = sex,
+          alternative = "two-sided")
+```
