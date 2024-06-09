@@ -1,0 +1,68 @@
+# L'estimation de paramètres {#sec-estimation}
+
+{{< include _setup.qmd >}}
+
+Nous allons utiliser la librairie `infer` pour faire de l'estimation de paramètres, ainsi que la base de données `gss`, présente dans la librairie.
+
+```{r}
+library(infer)
+data(gss)
+```
+
+## L'intervalle de confiance sur une moyenne
+
+Pour trouver un intervalle de confiance sur une moyenne, nous utilisons la fonction `t_test`.
+
+Les quatres arguments nécessaires sont:
+
+- `x`: la base de données à utiliser, sous forme de *tibble*.
+- `response`: la variable quantitative dont on veut connaître l'intervalle de confiance pour la moyenne.
+- `alternative`: pour un intervalle de confiance, on utilise toujours la valeur `two-sided`.
+- `conf_level`: un niveau de confiance entre 0 et 1.
+
+Par exemple, si on veut trouver un intervalle de confiance à 95% pour la moyenne de la variable `age`, nous utilisons:
+
+```{r}
+t_test( x = gss, 
+        response = age, 
+        alternative = "two-sided", 
+        conf_level = 0.95)
+```
+
+```{r}
+#| echo: false
+
+ci_age <- t_test(x = gss, response = age, alternative = "two-sided", conf_level = 0.95)
+```
+
+La borne inférieure de l'intervalle de confiance est donnée par la variable `lower_ci` et la borne supérieure par la variable `upper_ci`. Dans notre test, nous avons donc un intervalle de confiance entre `r ci_age$lower_ci` et `r ci_age$upper_ci`.
+
+## L'intervalle de confiance sur une proportion
+
+Pour trouver un intervalle de confiance sur une proportion, nous utilisons la fonction `prop_test`.
+
+Les cinq arguments nécessaires sont:
+
+- `x`: la base de données à utiliser, sous forme de *tibble*.
+- `response`: la variable quantitative dont on veut connaître l'intervalle de confiance pour la proportion.
+- `success`: la modalité de la variable que nous considérons comme un succès.
+- `alternative`: pour un intervalle de confiance, on utilise toujours la valeur `two-sided`.
+- `conf_level`: un niveau de confiance entre 0 et 1.
+
+Par exemple, si on veut trouver un intervalle de confiance à 95% pour la proportion de `female` de la variable `age`, nous utilisons:
+
+```{r}
+prop_test(  x = gss, 
+            response = sex, 
+            success = "female",
+            alternative = "two-sided", 
+            conf_level = 0.95)
+```
+
+```{r}
+#| echo: false
+
+ci_sex <- prop_test(  x = gss, response = sex, success = "female",alternative = "two-sided", conf_level = 0.95)
+```
+
+La borne inférieure de l'intervalle de confiance est donnée par la variable `lower_ci` et la borne supérieure par la variable `upper_ci`. Dans notre test, nous avons donc un intervalle de confiance entre `r ci_sex$lower_ci` et `r ci_sex$upper_ci`.

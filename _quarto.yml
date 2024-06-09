@@ -21,15 +21,20 @@ book:
     collapse-level: 2
   chapters:
     - index.qmd
-    - part: "Les tableaux"
+    - part: "Les probabilités et la combinatoire"
+      chapters: 
+        - combinatoire.qmd
+        - lois_probabilites.qmd
+    - part: "Les statistiques descriptives"
       chapters: 
         - tableaux.qmd
-    - part: "Les graphiques"
-      chapters: 
         - ggplot2.qmd
-    - part: "Les différentes mesures"
-      chapters:
         - mesures.qmd
+    - part: "L'estimation et les tests d'hypothèses"
+      chapters: 
+        - estimation.qmd
+        - tests-hypotheses.qmd
+        
 
 bibliography: references.bib
 

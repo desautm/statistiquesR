@@ -41,19 +41,6 @@ dbinom(3,4,1/6)
 
 Nous avons donc une probabilité de `r dbinom(3,4,1/6)*100`% d'obtenir 3 fois la face deux en lançant un dé à quatres reprises.
 
-Nous pouvons représenter graphiquement la loi binomiale. Soit $X~B(10,1/4)$. Nous aurons:
-
-```{r}
-fbinom <- data.frame(x = 0:10, y = dbinom(0:10, 10, 1/4))
-ggplot(fbinom, aes(x = x, y = y)) +
-  geom_bar(width = 0.1, stat = "identity") +
-  labs(
-    x = "Nombre de succès",
-    y = "Probabilité",
-    title = "Répartition de la probabilité de la loi binomiale en fonction du nombre de succès"
-  )
-```
-
 ### La loi de Poisson
 
 Le _nom racine_ pour la loi de Poisson est `pois`.
@@ -75,19 +62,6 @@ dpois(2, 1/2)
 
 Nous avons donc une probabilité de `r dpois(2, 1/2)*100`% d'obtenir deux erreurs sur une page.
 
-Nous pouvons représenter graphiquement la loi de Poisson. Soit $X\sim Po(1/2)$. Nous aurons:
-
-```{r}
-fpois <- data.frame(x = 0:10, y = dpois(0:10, 1/2))
-ggplot(fpois, aes(x = x, y = y)) +
-  geom_bar(width = 0.1, stat = "identity") +
-  labs(
-    x = "Nombre d'événements",
-    y = "Probabilité",
-    title = "Répartition de la probabilité de la loi de Poisson en fonction du nombre d'événements"
-  )
-```
-
 ### La loi géométrique
 
 Le _nom racine_ pour la loi géométrique est `geom`.
@@ -108,19 +82,6 @@ dgeom(6, 1/5)
 ```
 
 Nous avons donc une probabilité de `r dgeom(6, 1/5)*100`% d'obtenir 6 échecs avant un premier succès.
-
-Nous pouvons représenter graphiquement la loi géométrique. Soit $X\sim G(1/5)$. Nous aurons:
-
-```{r}
-fgeom <- data.frame(x = 0:10, y = dgeom(0:10, 1/5))
-ggplot(fgeom, aes(x = x, y = y)) +
-  geom_bar(width = 0.1, stat = "identity") +
-  labs(
-    x = "Nombre d'événements",
-    y = "Probabilité",
-    title = "Répartition de la probabilité de la loi géométrique en fonction du nombre d'échecs avant le premier succès"
-  )
-```
 
 > Remarque : Pour la loi géométrique, on rencontre parfois cette définition : la probabilité p'(k) est la probabilité, lors d'une succession d'épreuves de Bernoulli indépendantes, d'obtenir k échecs avant un succès. On remarque qu'il ne s'agit que d'un décalage de la précédente loi géométrique. Si $X$ suit la loi $p$, alors $X+1$ suit la loi $p'$.
 
@@ -148,19 +109,6 @@ dhyper(2, 5, 8, 4)
 
 Nous avons donc une probabilité de `r dhyper(2, 5, 8, 4)*100`% de piger 2 boules blanches dans un échantillon de taille 4.
 
-Nous pouvons représenter graphiquement la loi hypergéométrique. Soit $X\sim H(13,5,4)$. Nous aurons:
-
-```{r}
-fhyper <- data.frame(x = 0:4, y = dhyper(0:4, 5, 8, 4))
-ggplot(fhyper, aes(x = x, y = y)) +
-  geom_bar(width = 0.1, stat = "identity") +
-  labs(
-    x = "Nombre d'événements",
-    y = "Probabilité",
-    title = "Répartition de la probabilité de la loi hypergéométrique en fonction du nombre de boules blanches dans l'échantillon"
-  )
-```
-
 ## Les lois de probabilités continues
 
 ### La loi normale
@@ -185,13 +133,6 @@ pnorm(3.6, 3, 5) - pnorm(1.25, 3, 5)
 
 La probabilité que notre variable aléatoire se trouve entre 1.25 et 3.6 est donc `r (pnorm(3.6, 3, 5) - pnorm(1.25, 3, 5))*100` %.
 
-Nous pouvons représenter graphiquement la loi normale. Soit $X\sim N(0,1)$. Nous aurons:
-
-```{r}
-ggplot(data = data.frame(x = c(-4, 4)), aes(x)) +
-  stat_function(fun = dnorm, args = list(mean = 0, sd = 1))
-```
-
 ###  La loi de Student
 
 Le _nom racine_ pour la loi de Student est `t`.
@@ -213,10 +154,3 @@ Soit $X\sim T_5$ une variable aléatoire suivant une loi de Student à 5 degrés
 ```
 
 La probabilité que notre variable aléatoire soit plus grande que 3 est donc `r (1 - pt(3, 5))*100` %.
-
-Nous pouvons représenter graphiquement la loi de Student. Soit $X\sim T_{5}$. Nous aurons:
-
-```{r}
-ggplot(data = data.frame(x = c(-4, 4)), aes(x)) +
-  stat_function(fun = dt, args = list(df = 5))
-```

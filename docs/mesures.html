@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Les statistiques avec R – 3&nbsp; Les mesures</title>
+<title>Les statistiques avec R – 5&nbsp; Les mesures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./estimation.html" rel="next">
 <link href="./ggplot2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -143,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./mesures.html">Les différentes mesures</a></li><li class="breadcrumb-item"><a href="./mesures.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les mesures</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableaux.html">Les statistiques descriptives</a></li><li class="breadcrumb-item"><a href="./mesures.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -186,7 +187,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Les tableaux</span></a>
+ <span class="menu-text">Les probabilités et la combinatoire</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -194,8 +195,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tableaux.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></a>
+  <a href="./combinatoire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La combinatoire</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lois_probabilites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Les lois de probabilités</span></span></a>
   </div>
 </li>
       </ul>
@@ -203,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Les graphiques</span></a>
+ <span class="menu-text">Les statistiques descriptives</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -211,8 +218,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./tableaux.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">L’extension <code>ggplot2</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les graphiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mesures.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,7 +239,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Les différentes mesures</span></a>
+ <span class="menu-text">L’estimation et les tests d’hypothèses</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -228,8 +247,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mesures.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les mesures</span></span></a>
+  <a href="./estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tests-hypotheses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les tests d’hypothèses</span></span></a>
   </div>
 </li>
       </ul>
@@ -244,25 +269,25 @@ window.Quarto = {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul>
-  <li><a href="#les-mesures-de-tendance-centrale" id="toc-les-mesures-de-tendance-centrale" class="nav-link active" data-scroll-target="#les-mesures-de-tendance-centrale"><span class="header-section-number">3.1</span> Les mesures de tendance centrale</a>
+  <li><a href="#les-mesures-de-tendance-centrale" id="toc-les-mesures-de-tendance-centrale" class="nav-link active" data-scroll-target="#les-mesures-de-tendance-centrale"><span class="header-section-number">5.1</span> Les mesures de tendance centrale</a>
   <ul class="collapse">
-  <li><a href="#le-mode" id="toc-le-mode" class="nav-link" data-scroll-target="#le-mode"><span class="header-section-number">3.1.1</span> Le mode</a></li>
-  <li><a href="#la-médiane" id="toc-la-médiane" class="nav-link" data-scroll-target="#la-médiane"><span class="header-section-number">3.1.2</span> La médiane</a></li>
-  <li><a href="#la-moyenne" id="toc-la-moyenne" class="nav-link" data-scroll-target="#la-moyenne"><span class="header-section-number">3.1.3</span> La moyenne</a></li>
+  <li><a href="#le-mode" id="toc-le-mode" class="nav-link" data-scroll-target="#le-mode"><span class="header-section-number">5.1.1</span> Le mode</a></li>
+  <li><a href="#la-médiane" id="toc-la-médiane" class="nav-link" data-scroll-target="#la-médiane"><span class="header-section-number">5.1.2</span> La médiane</a></li>
+  <li><a href="#la-moyenne" id="toc-la-moyenne" class="nav-link" data-scroll-target="#la-moyenne"><span class="header-section-number">5.1.3</span> La moyenne</a></li>
   </ul></li>
-  <li><a href="#les-mesures-de-dispersion" id="toc-les-mesures-de-dispersion" class="nav-link" data-scroll-target="#les-mesures-de-dispersion"><span class="header-section-number">3.2</span> Les mesures de dispersion</a>
+  <li><a href="#les-mesures-de-dispersion" id="toc-les-mesures-de-dispersion" class="nav-link" data-scroll-target="#les-mesures-de-dispersion"><span class="header-section-number">5.2</span> Les mesures de dispersion</a>
   <ul class="collapse">
-  <li><a href="#létendue" id="toc-létendue" class="nav-link" data-scroll-target="#létendue"><span class="header-section-number">3.2.1</span> L’étendue</a></li>
-  <li><a href="#la-variance" id="toc-la-variance" class="nav-link" data-scroll-target="#la-variance"><span class="header-section-number">3.2.2</span> La variance</a></li>
-  <li><a href="#lécart-type" id="toc-lécart-type" class="nav-link" data-scroll-target="#lécart-type"><span class="header-section-number">3.2.3</span> L’écart-type</a></li>
-  <li><a href="#le-coefficient-de-variation" id="toc-le-coefficient-de-variation" class="nav-link" data-scroll-target="#le-coefficient-de-variation"><span class="header-section-number">3.2.4</span> Le coefficient de variation</a></li>
+  <li><a href="#létendue" id="toc-létendue" class="nav-link" data-scroll-target="#létendue"><span class="header-section-number">5.2.1</span> L’étendue</a></li>
+  <li><a href="#la-variance" id="toc-la-variance" class="nav-link" data-scroll-target="#la-variance"><span class="header-section-number">5.2.2</span> La variance</a></li>
+  <li><a href="#lécart-type" id="toc-lécart-type" class="nav-link" data-scroll-target="#lécart-type"><span class="header-section-number">5.2.3</span> L’écart-type</a></li>
+  <li><a href="#le-coefficient-de-variation" id="toc-le-coefficient-de-variation" class="nav-link" data-scroll-target="#le-coefficient-de-variation"><span class="header-section-number">5.2.4</span> Le coefficient de variation</a></li>
   </ul></li>
-  <li><a href="#les-mesures-de-position" id="toc-les-mesures-de-position" class="nav-link" data-scroll-target="#les-mesures-de-position"><span class="header-section-number">3.3</span> Les mesures de position</a>
+  <li><a href="#les-mesures-de-position" id="toc-les-mesures-de-position" class="nav-link" data-scroll-target="#les-mesures-de-position"><span class="header-section-number">5.3</span> Les mesures de position</a>
   <ul class="collapse">
-  <li><a href="#la-cote-z" id="toc-la-cote-z" class="nav-link" data-scroll-target="#la-cote-z"><span class="header-section-number">3.3.1</span> La cote z</a></li>
-  <li><a href="#les-quantiles" id="toc-les-quantiles" class="nav-link" data-scroll-target="#les-quantiles"><span class="header-section-number">3.3.2</span> Les quantiles</a></li>
-  <li><a href="#la-commande-summary" id="toc-la-commande-summary" class="nav-link" data-scroll-target="#la-commande-summary"><span class="header-section-number">3.3.3</span> La commande <code>summary</code></a></li>
-  <li><a href="#le-rang-centile" id="toc-le-rang-centile" class="nav-link" data-scroll-target="#le-rang-centile"><span class="header-section-number">3.3.4</span> Le rang centile</a></li>
+  <li><a href="#la-cote-z" id="toc-la-cote-z" class="nav-link" data-scroll-target="#la-cote-z"><span class="header-section-number">5.3.1</span> La cote z</a></li>
+  <li><a href="#les-quantiles" id="toc-les-quantiles" class="nav-link" data-scroll-target="#les-quantiles"><span class="header-section-number">5.3.2</span> Les quantiles</a></li>
+  <li><a href="#la-commande-summary" id="toc-la-commande-summary" class="nav-link" data-scroll-target="#la-commande-summary"><span class="header-section-number">5.3.3</span> La commande <code>summary</code></a></li>
+  <li><a href="#le-rang-centile" id="toc-le-rang-centile" class="nav-link" data-scroll-target="#le-rang-centile"><span class="header-section-number">5.3.4</span> Le rang centile</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/desautm/statistiquesR/edit/main/mesures.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li></ul></div></nav>
@@ -270,9 +295,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./mesures.html">Les différentes mesures</a></li><li class="breadcrumb-item"><a href="./mesures.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les mesures</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableaux.html">Les statistiques descriptives</a></li><li class="breadcrumb-item"><a href="./mesures.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-mesures" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les mesures</span></span></h1>
+<h1 class="title"><span id="sec-mesures" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures</span></span></h1>
 </div>
 
 
@@ -290,10 +315,10 @@ window.Quarto = {
 
 
 <p>Les mesures de tendance centrale permettent de déterminer où se situe le “centre” des données. Les trois mesures de tendance centrale sont le mode, la moyenne et la médiane.</p>
-<section id="les-mesures-de-tendance-centrale" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="les-mesures-de-tendance-centrale"><span class="header-section-number">3.1</span> Les mesures de tendance centrale</h2>
-<section id="le-mode" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="le-mode"><span class="header-section-number">3.1.1</span> Le mode</h3>
+<section id="les-mesures-de-tendance-centrale" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="les-mesures-de-tendance-centrale"><span class="header-section-number">5.1</span> Les mesures de tendance centrale</h2>
+<section id="le-mode" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="le-mode"><span class="header-section-number">5.1.1</span> Le mode</h3>
 <p>Le mode est la <strong>modalité</strong>, <strong>valeur</strong> ou <strong>classe</strong> possédant la plus grande fréquence. En d’autres mots, c’est la donnée la plus fréquente.</p>
 <p>Puisque le mode se préoccupe seulement de la donnée la plus fréquente, il n’est pas influencé par les valeurs extrêmes.</p>
 <p>Lorsque le mode est une classe, il est appelé <strong>classe modale</strong>.</p>
@@ -335,8 +360,8 @@ window.Quarto = {
 </div>
 <p>La classe modale est donc la classe <em>[0,1)</em> avec une fréquence de 34880.</p>
 </section>
-<section id="la-médiane" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="la-médiane"><span class="header-section-number">3.1.2</span> La médiane</h3>
+<section id="la-médiane" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="la-médiane"><span class="header-section-number">5.1.2</span> La médiane</h3>
 <p>La médiane, notée <strong>Md</strong>, est la valeur qui sépare une série de données classée en ordre croissant en deux parties égales.</p>
 <p>La médiane étant la valeur du milieu, elle est la valeur où le pourcentage cumulé atteint 50%.</p>
 <p>Puisque la médiane se préoccupe seulement de déterminer où se situe le centre des données, elle n’est pas influencée par les valeurs extrêmes. Elle est donc une mesure de tendance centrale plus fiable que la moyenne.</p>
@@ -356,8 +381,8 @@ window.Quarto = {
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2401</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="la-moyenne" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="la-moyenne"><span class="header-section-number">3.1.3</span> La moyenne</h3>
+<section id="la-moyenne" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="la-moyenne"><span class="header-section-number">5.1.3</span> La moyenne</h3>
 <p>La moyenne est la valeur qui pourrait remplacer chacune des données d’une série pour que leur somme demeure identique. Intuitivement, elle représente le centre d’équilibre d’une série de données. La somme des distances qui sépare les données plus petites que la moyenne devrait être la même que la somme des distances qui sépare les données plus grandes.</p>
 <blockquote class="blockquote">
 <p>Important : La moyenne n’est définie que pour les variables quantitatives. En effet, si vous tentez d’utiliser la moyenne pour des données autres que numériques, <code>R</code> vous donnera un message d’erreur.</p>
@@ -375,13 +400,13 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="les-mesures-de-dispersion" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="les-mesures-de-dispersion"><span class="header-section-number">3.2</span> Les mesures de dispersion</h2>
+<section id="les-mesures-de-dispersion" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="les-mesures-de-dispersion"><span class="header-section-number">5.2</span> Les mesures de dispersion</h2>
 <p>Les mesures de tendance centrale (mode, moyenne et médiane) ne permettent pas de déterminer si une série de données est principalement située autour de son centre, ou si au contraire elle est très dispersée.</p>
 <p>Les mesures de dispersion, elles, permettent de déterminer si une série de données est centralisée autour de sa moyenne, ou si elle est au contraire très dispersée.</p>
 <p>Les mesures de dispersion sont l’étendue, la variance, l’écart-type et le coefficient de variation.</p>
-<section id="létendue" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="létendue"><span class="header-section-number">3.2.1</span> L’étendue</h3>
+<section id="létendue" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="létendue"><span class="header-section-number">5.2.1</span> L’étendue</h3>
 <p>La première mesure de dispersion, l’étendue, est la différence entre la valeur maximale et la valeur minimale.</p>
 <p>L’étendue ne tenant compte que du maximum et du minimum, elle est grandement influencée par les valeurs extrêmes. Elle est donc une mesure de dispersion peu fiable.</p>
 <p>La fonction <code>range</code> permet de calculer l’étendue d’une variable en langage <code>R</code>.</p>
@@ -392,8 +417,8 @@ window.Quarto = {
 </div>
 <p>Nous pouvons donc calculer l’étendue de la variable <code>carat</code> en soustrayant les deux valeurs obtenues par la fonction <code>range</code>, c’est-à-dire que l’étendue est 5.01-0.2 = 4.81.</p>
 </section>
-<section id="la-variance" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="la-variance"><span class="header-section-number">3.2.2</span> La variance</h3>
+<section id="la-variance" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="la-variance"><span class="header-section-number">5.2.2</span> La variance</h3>
 <p>La variance sert principalement à calculer l’écart-type, la mesure de dispersion la plus connue.</p>
 <blockquote class="blockquote">
 <p>Attention : Les unités de la variance sont des unités<sup>2</sup>.</p>
@@ -406,8 +431,8 @@ window.Quarto = {
 </div>
 <p>Ceci signifie que la variance de la variable <code>carat</code> est 0.2246867 carat<sup>2</sup>.</p>
 </section>
-<section id="lécart-type" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="lécart-type"><span class="header-section-number">3.2.3</span> L’écart-type</h3>
+<section id="lécart-type" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="lécart-type"><span class="header-section-number">5.2.3</span> L’écart-type</h3>
 <p>L’écart-type est la mesure de dispersion la plus couramment utilisée. Il peut être vu comme la « moyenne » des écarts entre les données et la moyenne.</p>
 <p>Puisque l’écart-type tient compte de chacune des données, il est une mesure de dispersion beaucoup plus fiable que l’étendue.</p>
 <p>Il est défini comme la racine carrée de la variance.</p>
@@ -419,8 +444,8 @@ window.Quarto = {
 </div>
 <p>Ceci signifie que l’écart-type de la variable <code>carat</code> est 0.4740112 carat.</p>
 </section>
-<section id="le-coefficient-de-variation" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="le-coefficient-de-variation"><span class="header-section-number">3.2.4</span> Le coefficient de variation</h3>
+<section id="le-coefficient-de-variation" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="le-coefficient-de-variation"><span class="header-section-number">5.2.4</span> Le coefficient de variation</h3>
 <p>Le coefficient de variation, noté C. V., est calculé comme suit :</p>
 <p><span class="math display">\[\begin{equation}
 C.V. = \dfrac{\text{ecart-type}}{\text{moyenne}}\times 100\%
@@ -439,12 +464,12 @@ C.V. = \dfrac{\text{ecart-type}}{\text{moyenne}}\times 100\%
 <p>Le C.V. de la variable <code>carat</code> est donc 59.4043906 %, ce qui signifie que les données sont hétérogènes, car le coefficient de variation est plus grand que 15%.</p>
 </section>
 </section>
-<section id="les-mesures-de-position" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="les-mesures-de-position"><span class="header-section-number">3.3</span> Les mesures de position</h2>
+<section id="les-mesures-de-position" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="les-mesures-de-position"><span class="header-section-number">5.3</span> Les mesures de position</h2>
 <p>Les mesures de position permettent de situer une donnée par rapport aux autres. Les différentes mesures de position sont la cote Z, les quantiles et les rangs.</p>
 <p>Tout comme les mesures de dispersion, celles-ci ne sont définies que pour une variable quantitative.</p>
-<section id="la-cote-z" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="la-cote-z"><span class="header-section-number">3.3.1</span> La cote z</h3>
+<section id="la-cote-z" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="la-cote-z"><span class="header-section-number">5.3.1</span> La cote z</h3>
 <p>Cette mesure de position se base sur la moyenne et l’écart-type.</p>
 <p>La cote Z d’une donnée x est calculée comme suit :</p>
 <p><span class="math display">\[\begin{equation}
@@ -483,8 +508,8 @@ Z = \dfrac{x-\text{moyenne}}{\text{ecart-type}}
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4.645587</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="les-quantiles" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="les-quantiles"><span class="header-section-number">3.3.2</span> Les quantiles</h3>
+<section id="les-quantiles" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="les-quantiles"><span class="header-section-number">5.3.2</span> Les quantiles</h3>
 <p>Un quantile est une donnée qui correspond à un certain pourcentage cumulé.</p>
 <p>Parmi les quantiles, on distingue les quartiles, les quintiles, les déciles et les centiles.</p>
 <ul>
@@ -512,8 +537,8 @@ Z = \dfrac{x-\text{moyenne}}{\text{ecart-type}}
 </div>
 <p>Ceci implique que 75% des diamants ont un prix en dollars inférieur ou égal à 5324.25 $.</p>
 </section>
-<section id="la-commande-summary" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="la-commande-summary"><span class="header-section-number">3.3.3</span> La commande <code>summary</code></h3>
+<section id="la-commande-summary" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="la-commande-summary"><span class="header-section-number">5.3.3</span> La commande <code>summary</code></h3>
 <p>La commande <code>summary</code> produit un sommaire contenant six mesures importantes:</p>
 <ol type="1">
 <li><code>Min</code> : le minimum de la variable</li>
@@ -530,8 +555,8 @@ Z = \dfrac{x-\text{moyenne}}{\text{ecart-type}}
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     326     950    2401    3933    5324   18823</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="le-rang-centile" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="le-rang-centile"><span class="header-section-number">3.3.4</span> Le rang centile</h3>
+<section id="le-rang-centile" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="le-rang-centile"><span class="header-section-number">5.3.4</span> Le rang centile</h3>
 <p>Un rang centile représente le pourcentage cumulé, <em>exprimé en nombre entier</em>, qui correspond à une certaine donnée. Nous déterminerons les rangs centiles pour les variables continues seulement.</p>
 <p>Les rangs centiles sont donc exactement l’inverse des centiles.</p>
 <p>Il n’existe pas de fonctions dans <code>R</code> permettant de trouver directement le rang centile, mais il est facile d’utiliser la fonction <code>mean</code> pour le trouver.</p>
@@ -969,11 +994,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ggplot2.html" class="pagination-link" aria-label="L'extension `ggplot2`">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">L’extension <code>ggplot2</code></span></span>
+      <a href="./ggplot2.html" class="pagination-link" aria-label="Les graphiques">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les graphiques</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./estimation.html" class="pagination-link" aria-label="L'estimation de paramètres">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

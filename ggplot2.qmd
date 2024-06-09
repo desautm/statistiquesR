@@ -1,4 +1,4 @@
-# L'extension `ggplot2` {#sec-ggplot2}
+# Les graphiques {#sec-graphiques}
 
 {{< include _setup.qmd >}}
 

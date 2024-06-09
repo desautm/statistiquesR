@@ -1,0 +1,70 @@
+# Les tests d'hypothèses {#sec-tests}
+
+{{< include _setup.qmd >}}
+
+Nous allons utiliser la librairie `infer` pour faire des tests d'hypothèses, ainsi que la base de données `gss`, présente dans la librairie.
+
+```{r}
+library(infer)
+data(gss)
+```
+
+## Les tests d'hypothèses sur une moyenne
+
+Pour effectuer un test d'hypothèses sur une moyenne, nous utilisons la fonction `t_test`.
+
+Les quatres arguments nécessaires sont:
+
+- `x`: la base de données à utiliser, sous forme de *tibble*.
+- `response`: la variable quantitative dont on veut tester l'hypothèse.
+- `mu`: la valeur de la moyenne à l'hypothèse $H_0$.
+- `alternative`: 
+  - `less`: pour un test unilatéral à gauche
+  - `two-sided`: pour un test bilatéral
+  - `greater`: pour un test unilatéral à droite
+
+Par exemple, si on veut tester si la moyenne de la variable `age` est plus grande que 39 ans, à un niveau de confiance de 98%, nous utilisons:
+
+```{r}
+t_test( x = gss,
+        response = age,
+        mu = 39,
+        alternative = "greater"
+)
+```
+
+```{r}
+#| echo: false
+
+t_age <- t_test( x = gss,
+        response = age,
+        mu = 39,
+        alternative = "greater"
+)
+```
+
+La variable `p_value` nous permet de conserver ou de rejetter $H_0$. En effet, dans notre cas, la valeur est de `r t_age$p_value` qui est plus petite que le risque d'erreur de 2% (associé au niveau de confiance de 98%). On rejette donc $H_0$ et on accepte $H_1$, l'âge moyen est plus grand que 39 ans.
+
+## Les tests d'hypothèses sur une proportion
+
+Pour effectuer un test d'hypothèses sur une proportion, nous utilisons la fonction `prop_test`.
+
+Les quatres arguments nécessaires sont:
+
+- `x`: la base de données à utiliser, sous forme de *tibble*.
+- `response`: la variable quantitative dont on veut connaître l'intervalle de confiance pour la proportion.
+- `success`: la modalité de la variable que nous considérons comme un succès.
+- `alternative`: 
+  - `less`: pour un test unilatéral à gauche
+  - `two-sided`: pour un test bilatéral
+  - `greater`: pour un test unilatéral à droite
+
+Par exemple, si on veut tester si la moyenne de la variable `age` est plus grande que 39 ans, à un niveau de confiance de 98%, nous utilisons:
+
+```{r}
+prop_test(  x = gss, 
+            response = sex, 
+            success = "female",
+            alternative = "less", 
+            p = 0.51)
+```
