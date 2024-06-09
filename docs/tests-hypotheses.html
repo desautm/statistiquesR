@@ -270,6 +270,7 @@ window.Quarto = {
   <ul>
   <li><a href="#les-tests-dhypothèses-sur-une-moyenne" id="toc-les-tests-dhypothèses-sur-une-moyenne" class="nav-link active" data-scroll-target="#les-tests-dhypothèses-sur-une-moyenne"><span class="header-section-number">7.1</span> Les tests d’hypothèses sur une moyenne</a></li>
   <li><a href="#les-tests-dhypothèses-sur-une-proportion" id="toc-les-tests-dhypothèses-sur-une-proportion" class="nav-link" data-scroll-target="#les-tests-dhypothèses-sur-une-proportion"><span class="header-section-number">7.2</span> Les tests d’hypothèses sur une proportion</a></li>
+  <li><a href="#les-tests-dhypothèses-sur-une-différence-de-moyennes" id="toc-les-tests-dhypothèses-sur-une-différence-de-moyennes" class="nav-link" data-scroll-target="#les-tests-dhypothèses-sur-une-différence-de-moyennes"><span class="header-section-number">7.3</span> Les tests d’hypothèses sur une différence de moyennes</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/desautm/statistiquesR/edit/main/tests-hypotheses.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li></ul></div></nav>
     </div>
@@ -306,7 +307,7 @@ window.Quarto = {
 <p>Les quatres arguments nécessaires sont:</p>
 <ul>
 <li><code>x</code>: la base de données à utiliser, sous forme de <em>tibble</em>.</li>
-<li><code>response</code>: la variable quantitative dont on veut tester l’hypothèse.</li>
+<li><code>response</code>: la variable dont on veut tester l’hypothèse.</li>
 <li><code>mu</code>: la valeur de la moyenne à l’hypothèse <span class="math inline">\(H_0\)</span>.</li>
 <li><code>alternative</code>:
 <ul>
@@ -335,7 +336,7 @@ window.Quarto = {
 <p>Les quatres arguments nécessaires sont:</p>
 <ul>
 <li><code>x</code>: la base de données à utiliser, sous forme de <em>tibble</em>.</li>
-<li><code>response</code>: la variable quantitative dont on veut connaître l’intervalle de confiance pour la proportion.</li>
+<li><code>response</code>: la variable dont on veut connaître l’intervalle de confiance pour la proportion.</li>
 <li><code>success</code>: la modalité de la variable que nous considérons comme un succès.</li>
 <li><code>alternative</code>:
 <ul>
@@ -344,7 +345,7 @@ window.Quarto = {
 <li><code>greater</code>: pour un test unilatéral à droite</li>
 </ul></li>
 </ul>
-<p>Par exemple, si on veut tester si la moyenne de la variable <code>age</code> est plus grande que 39 ans, à un niveau de confiance de 98%, nous utilisons:</p>
+<p>Par exemple, si on veut tester si la proportion de <code>female</code> de la variable <code>sex</code> est plus petite que 51%, à un niveau de confiance de 99%, nous utilisons:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop_test</span>(  <span class="at">x =</span> gss, </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">response =</span> sex, </span>
@@ -356,6 +357,10 @@ window.Quarto = {
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       &lt;dbl&gt;    &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;      </span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      2.45        1  0.0587 less</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>La variable <code>p_value</code> nous permet de conserver ou de rejetter <span class="math inline">\(H_0\)</span>. En effet, dans notre cas, la valeur est de 0.0587257 qui est plus grande que le risque d’erreur de 1% (associé au niveau de confiance de 99%). On conserve donc <span class="math inline">\(H_0\)</span>, la proportion de femmes ne semble pas être plus petite que 51%.</p>
+</section>
+<section id="les-tests-dhypothèses-sur-une-différence-de-moyennes" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="les-tests-dhypothèses-sur-une-différence-de-moyennes"><span class="header-section-number">7.3</span> Les tests d’hypothèses sur une différence de moyennes</h2>
 
 
 </section>

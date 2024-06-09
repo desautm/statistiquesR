@@ -289,7 +289,7 @@
     "href": "tests-hypotheses.html#les-tests-dhypothèses-sur-une-moyenne",
     "title": "7  Les tests d’hypothèses",
     "section": "",
-    "text": "x: la base de données à utiliser, sous forme de tibble.\nresponse: la variable quantitative dont on veut tester l’hypothèse.\nmu: la valeur de la moyenne à l’hypothèse \\(H_0\\).\nalternative:\n\nless: pour un test unilatéral à gauche\ntwo-sided: pour un test bilatéral\ngreater: pour un test unilatéral à droite",
+    "text": "x: la base de données à utiliser, sous forme de tibble.\nresponse: la variable dont on veut tester l’hypothèse.\nmu: la valeur de la moyenne à l’hypothèse \\(H_0\\).\nalternative:\n\nless: pour un test unilatéral à gauche\ntwo-sided: pour un test bilatéral\ngreater: pour un test unilatéral à droite",
     "crumbs": [
       "L'estimation et les tests d'hypothèses",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Les tests d'hypothèses</span>"
@@ -300,7 +300,18 @@
     "href": "tests-hypotheses.html#les-tests-dhypothèses-sur-une-proportion",
     "title": "7  Les tests d’hypothèses",
     "section": "7.2 Les tests d’hypothèses sur une proportion",
-    "text": "7.2 Les tests d’hypothèses sur une proportion\nPour effectuer un test d’hypothèses sur une proportion, nous utilisons la fonction prop_test.\nLes quatres arguments nécessaires sont:\n\nx: la base de données à utiliser, sous forme de tibble.\nresponse: la variable quantitative dont on veut connaître l’intervalle de confiance pour la proportion.\nsuccess: la modalité de la variable que nous considérons comme un succès.\nalternative:\n\nless: pour un test unilatéral à gauche\ntwo-sided: pour un test bilatéral\ngreater: pour un test unilatéral à droite\n\n\nPar exemple, si on veut tester si la moyenne de la variable age est plus grande que 39 ans, à un niveau de confiance de 98%, nous utilisons:\n\nprop_test(  x = gss, \n            response = sex, \n            success = \"female\",\n            alternative = \"less\", \n            p = 0.51)\n#&gt; # A tibble: 1 × 4\n#&gt;   statistic chisq_df p_value alternative\n#&gt;       &lt;dbl&gt;    &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;      \n#&gt; 1      2.45        1  0.0587 less",
+    "text": "7.2 Les tests d’hypothèses sur une proportion\nPour effectuer un test d’hypothèses sur une proportion, nous utilisons la fonction prop_test.\nLes quatres arguments nécessaires sont:\n\nx: la base de données à utiliser, sous forme de tibble.\nresponse: la variable dont on veut connaître l’intervalle de confiance pour la proportion.\nsuccess: la modalité de la variable que nous considérons comme un succès.\nalternative:\n\nless: pour un test unilatéral à gauche\ntwo-sided: pour un test bilatéral\ngreater: pour un test unilatéral à droite\n\n\nPar exemple, si on veut tester si la proportion de female de la variable sex est plus petite que 51%, à un niveau de confiance de 99%, nous utilisons:\n\nprop_test(  x = gss, \n            response = sex, \n            success = \"female\",\n            alternative = \"less\", \n            p = 0.51)\n#&gt; # A tibble: 1 × 4\n#&gt;   statistic chisq_df p_value alternative\n#&gt;       &lt;dbl&gt;    &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;      \n#&gt; 1      2.45        1  0.0587 less\n\nLa variable p_value nous permet de conserver ou de rejetter \\(H_0\\). En effet, dans notre cas, la valeur est de 0.0587257 qui est plus grande que le risque d’erreur de 1% (associé au niveau de confiance de 99%). On conserve donc \\(H_0\\), la proportion de femmes ne semble pas être plus petite que 51%.",
+    "crumbs": [
+      "L'estimation et les tests d'hypothèses",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Les tests d'hypothèses</span>"
+    ]
+  },
+  {
+    "objectID": "tests-hypotheses.html#les-tests-dhypothèses-sur-une-différence-de-moyennes",
+    "href": "tests-hypotheses.html#les-tests-dhypothèses-sur-une-différence-de-moyennes",
+    "title": "7  Les tests d’hypothèses",
+    "section": "7.3 Les tests d’hypothèses sur une différence de moyennes",
+    "text": "7.3 Les tests d’hypothèses sur une différence de moyennes",
     "crumbs": [
       "L'estimation et les tests d'hypothèses",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Les tests d'hypothèses</span>"

@@ -16,7 +16,7 @@ Pour effectuer un test d'hypothèses sur une moyenne, nous utilisons la fonction
 Les quatres arguments nécessaires sont:
 
 - `x`: la base de données à utiliser, sous forme de *tibble*.
-- `response`: la variable quantitative dont on veut tester l'hypothèse.
+- `response`: la variable dont on veut tester l'hypothèse.
 - `mu`: la valeur de la moyenne à l'hypothèse $H_0$.
 - `alternative`: 
   - `less`: pour un test unilatéral à gauche
@@ -52,14 +52,14 @@ Pour effectuer un test d'hypothèses sur une proportion, nous utilisons la fonct
 Les quatres arguments nécessaires sont:
 
 - `x`: la base de données à utiliser, sous forme de *tibble*.
-- `response`: la variable quantitative dont on veut connaître l'intervalle de confiance pour la proportion.
+- `response`: la variable dont on veut connaître l'intervalle de confiance pour la proportion.
 - `success`: la modalité de la variable que nous considérons comme un succès.
 - `alternative`: 
   - `less`: pour un test unilatéral à gauche
   - `two-sided`: pour un test bilatéral
   - `greater`: pour un test unilatéral à droite
 
-Par exemple, si on veut tester si la moyenne de la variable `age` est plus grande que 39 ans, à un niveau de confiance de 98%, nous utilisons:
+Par exemple, si on veut tester si la proportion de `female` de la variable `sex` est plus petite que 51%, à un niveau de confiance de 99%, nous utilisons:
 
 ```{r}
 prop_test(  x = gss, 
@@ -68,3 +68,17 @@ prop_test(  x = gss,
             alternative = "less", 
             p = 0.51)
 ```
+
+```{r}
+#| echo: false
+
+p_sex <- prop_test(  x = gss, 
+            response = sex, 
+            success = "female",
+            alternative = "less", 
+            p = 0.51)
+```
+
+La variable `p_value` nous permet de conserver ou de rejetter $H_0$. En effet, dans notre cas, la valeur est de `r p_sex$p_value` qui est plus grande que le risque d'erreur de 1% (associé au niveau de confiance de 99%). On conserve donc $H_0$, la proportion de femmes ne semble pas être plus petite que 51%.
+
+## Les tests d'hypothèses sur une différence de moyennes
