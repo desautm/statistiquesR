@@ -1,0 +1,180 @@
+# Le tidyverse {#sec-tidyverse}
+
+{{< include _setup.qmd >}}
+
+Dans ce document, nous utiliserons l'extension  `tidyverse`. Ce chapitre permettra d'introduire l'extension `tidyverse` mais surtout les principes qui la sous-tendent.
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
+Cette commande va en fait charger plusieurs extensions qui constituent le __coeur__ du `tidyverse`, à savoir :
+
+- `ggplot2` (visualisation)
+- `dplyr` (manipulation des données)
+- `tidyr` (remise en forme des données)
+- `purrr` (programmation)
+- `readr` (importation de données)
+- `tibble` (tableaux de données)
+- `forcats` (variables qualitatives)
+- `stringr` (chaînes de caractères)
+
+Il existe d'autres extensions qui font partie du `tidyverse` mais qui doivent être chargées explicitement, comme par exemple `readxl` (pour l'importation de données depuis des fichiers Excel).
+
+La liste complète des extensions se trouve sur le site officiel du `tidyverse` [https://www.tidyverse.org/packages/](https://www.tidyverse.org/packages/).
+
+## Extensions
+
+Le terme *tidyverse* est une contraction de *tidy* (qu'on pourrait traduire par *bien rangé*) et de *universe*. En allant visiter le site internet de ces extensions [https://www.tidyverse.org/](https://www.tidyverse.org/), voici ce que nous pouvons trouver sur la première page du site:
+
+> The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. 
+
+que nous pourrions traduire par:
+
+> Le tidyverse est une collection dogmatique d'extensions pour le langage R conçues pour la science des données. Toutes les extensions partagent une philosphie sous-jacente de design, de grammaire et de structures de données.
+
+Ces extensions abordent un très grand nombre d'opérations courantes dans `R`. L'avantage d'utiliser le `tidyverse` c'est qu'il permet de simplifier plusieurs opérations fréquentes et il introduit le concept de **tidy data**. De plus, la grammaire du `tidyverse` étant cohérente entre toutes ses extensions, en apprenant comment utiliser l'une de ces extensions, vous serez en monde connu lorsque viendra le temps d'apprendre de nouvelles extensions.
+
+Nous utiliserons le `tidyverse` pour:
+
+- Le concept de **tidy data**
+- L'importation et/ou l'exportation de données
+- La manipulation de variables
+- La visualisation
+
+Le `tidyverse` permet aussi de:
+
+- Travailler avec des chaînes de caractères (du texte par exemple)
+- Programmer
+- Remettre en forme des données
+- Extraire des données du Web
+- Etc.
+
+Pour en savoir plus, nous invitons le lecteur à se rendre au site du `tidyverse` [https://www.tidyverse.org/](https://www.tidyverse.org/). Le `tidyverse` est en grande partie issu des travaux de [Hadley Wickham](http://hadley.nz/).
+
+## Les tidy data {#tidydata}
+
+Le `tidyverse` est en partie fondé sur le concept de *tidy data*, développé à l'origine par Hadley Wickham dans un article du *Journal of Statistical Software*. Nous pourrions traduire ce concept par *données bien rangées*.
+
+Il s'agit d'un modèle d'organisation des données qui vise à faciliter le travail souvent long et fastidieux de nettoyage et de préparation préalable à la mise en oeuvre de méthodes d'analyse. Dans ce livre, nous travaillerons toujours avec des *tidy data*. En réalité, la plupart des données rencontrées par les chercheurs ne sont pas *tidy*. Il existe une extension du `tidyverse` qui permet de faciliter la transformation de données *non tidy* en données *tidy*, l'extension `tidyr`. Nous ne verrons pas comment l'utiliser dans ce livre.
+
+Les principes d'un jeu de données *tidy* sont les suivants :
+
+1. chaque variable est une colonne
+2. chaque observation est une ligne
+3. chaque valeur doit être dans une cellule différente
+
+La @fig-tidy-structure montre ces règles de façon visuelle.
+
+
+![Suivre les trois principes rend les données tidy: les variables sont en colonnes, les observations sont sur des lignes, et chaques valeurs sont dans des cellules différentes.](images/tidy-1.png){#fig-tidy-structure}
+
+Pourquoi s'assurer que vos données sont *tidy*? Il y a deux avantages importants:
+
+1. Un avantage général de choisir une seule façon de conserver vos données.
+   Si vous utilisez une structure de données consitante, il est plus facile
+   d'apprendre à utiliser les outils qui fonctionneront avec ce type de 
+   structure, étant donné que celles-ci possède une uniformité sous-jacente.
+   
+2. Un avantage spécifique de placer les variables en colonnes car ceci permet 
+   de *vectoriser* les opérations dans `R`. Ceci implique que vos fonctions seront plus
+   rapides lorsque viendra le temps de les exécuter.
+   
+Voici un exemple de données *tidy* qui sont accessibles dans la librairie `tidyverse`.
+
+```{r diamonds}
+diamonds
+```
+
+## Les tibbles {#tibbles}
+
+Une autre particularité du *tidyverse* est que ces extensions travaillent avec des tableaux de données au format *tibble*, qui est une évolution plus moderne du classique *data frame* du R de base. Ce format est fourni est géré par l'extension du même nom (`tibble`), qui fait partie du coeur du *tidyverse*. La plupart des fonctions des extensions du *tidyverse* acceptent des *data frames* en entrée, mais retournent un objet de classe `tibble`.
+
+Pour être en mesure d'effectuer des  calculs statistiques, il nous faut une structure qui soit en mesure de garder en mémoire une base de données. Ces structures se nomment des "tibbles" dans R.
+
+### Un exemple de **tibble**
+
+Pour comprendre ce qu'est un **tibble**, nous allons utiliser deux librairies: `nycflights13` et `diamonds`. Si ce n'est pas déjà fait, vous devez les installer et ensuite les charger.
+
+```{r}
+library(nycflights13)
+library(ggplot2)
+```
+
+Nous allons étudier le paquetage `nycflights13`qui contient 5 bases de données contenant des informations concernant les vols intérieurs en partance de New York en 2013, à partir des aéroports de Newark Liberty International (EWR), John F. Kennedy International (JFK) ou LaGuardia (LGA). Les 5 bases de données sont les suivantes:
+
+- flights: information sur les 336,776 vols
+- airlines: lien entre les codes IATA de deux lettres et les noms de compagnies d'aviation (16 au total)
+- planes: information de construction sur les 3 322 avions utilisés
+- weather: données météo à chaque heure (environ 8 710 observations) pour chacun des trois aéroports.
+- airports: noms des aéroports et localisations
+
+### La base de données flights
+
+Pour visualiser facilement une base de données sous forme **tibble**, il suffit de taper son nom dans la console. Nous allons utiliser la base de données flights. Par exemple:
+
+```{r}
+flights
+```
+
+Nous allons décortiquer la sortie console:
+
+- `A tibble: 336,776 x 19`: un **tibble** est une façon de représenter une base de données en R. Cette base de données possède:
+    * `336 776` lignes
+    * `19` colonnes correspondant aux 19 variables décrivant chacune des observations
+- `year month` `day` `dep_time` `sched_dep_time` `dep_delay` `arr_time` sont différentes colonnes, en d'autres mots des variables, de cette base de données.
+- Nous avons ensuite 10 lignes d'obervations correspondant à 10 vols
+- `... with 336,766 more rows, and 12 more variables:` nous indique que 336 766 lignes et 12 autres variables ne pouvaient pas être affichées à l'écran.
+
+Malheureusement cette sortie écran ne nous permet pas d'explorer les données correctement. Nous verrons à la section \@ref(explorertibbles) comment explorer des **tibbles**.
+
+### La base de données **diamonds** {#donneesdiamonds}
+
+La base de données **diamonds** est composée des variables suivantes:
+
+- `price` : prix en dollars US
+- `carat` : poids du diamant en grammes
+- `cut` : qualité de la coupe (Fair, Good, Very Good, Premium, Ideal)
+- `color` : couleur du diamant (J (pire) jusqu'à D (meilleur))
+- `clarity` : une mesure de la clarté du diamant (I1 (pire), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (meilleur))
+- `x` : longueur en mm
+- `y` : largeur en mm
+- `z` : hauteur en mm
+- `depth` : z / mean(x, y) = 2 * z / (x + y)
+- `table` : largeur du dessus du diamant par  rapport à son point le plus large
+
+```{r}
+diamonds
+```
+
+### Comment explorer des "tibbles" {#explorertibbles}
+
+Voici les façons les plus communes de comprendre les données se trouvant à l'intérieur d'un "tibble":
+
+- En utilisant la fonction `View()` de RStudio.C'est la commande que nous utiliserons le plus fréquemment.
+- En utilisant la fonction `glimpse()`.
+- En utilisant l'opérateur `$` pour étudier une seule variable d'une base de données.
+
+Voici comment utiliser ces fonctions.
+
+1. `View()`: Éxécutez `View(flights)` dans la console de RStudio et explorez la base de données obtenue. 
+
+Nous remarquons que chaque colonnes représentent une variable différente et que ces variables peuvent être de différents types. Certaines de ces variables, comme `distance`, `day` et `arr_delay` sont des variables dites quantitatives. Ces variables sont numériques par nature. D'autres variables sont dites qualitatives.
+
+Si vous regardez la colonne à l'extrème-gauche de la sortie de `View(flights)`, vous verrez une colonne de nombres. Ces nombres représentent les numéros de ligne de la base de données. Si vous vous promenez sur une ligne de même nombre, par exemple la ligne 5, vous étudiez une unité statistique.
+
+2. `glimpse`:
+
+La seconde façon d'explorer une base de données est d'utiliser la fonction `glimpse()`. Cette fonction nous donne la majorité de l'information précédente et encore plus.
+
+```{r}
+glimpse(flights)
+```
+
+3. L'opérateur `$`:
+
+Finalement, l'opérateur `$` nous permet d'explorer une seule variable à l'intérieur d'une base de données. Par exemple, si nous désirons étudier la variable `name` de la base de données `airlines`, nous obtenons:
+
+```{r}
+airlines$name
+```

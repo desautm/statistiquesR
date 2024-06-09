@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Les statistiques avec R – 6&nbsp; L’estimation de paramètres</title>
+<title>Les statistiques avec R – 8&nbsp; L’estimation de paramètres</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation.html">L’estimation et les tests d’hypothèses</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation.html">L’estimation et les tests d’hypothèses</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -158,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Les probabilités et la combinatoire</span></a>
+ <span class="menu-text">Le tidyverse</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -166,14 +166,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./combinatoire.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La combinatoire</span></span></a>
+  <a href="./tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Le tidyverse</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lois_probabilites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Les lois de probabilités</span></span></a>
+  <a href="./filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manipuler les données</span></span></a>
   </div>
 </li>
       </ul>
@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Les statistiques descriptives</span></a>
+ <span class="menu-text">Les probabilités et la combinatoire</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -189,20 +189,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tableaux.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></a>
+  <a href="./combinatoire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La combinatoire</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les graphiques</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mesures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures</span></span></a>
+  <a href="./lois_probabilites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les lois de probabilités</span></span></a>
   </div>
 </li>
       </ul>
@@ -210,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">L’estimation et les tests d’hypothèses</span></a>
+ <span class="menu-text">Les statistiques descriptives</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -218,14 +212,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./tableaux.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Les graphiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mesures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les mesures</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">L’estimation et les tests d’hypothèses</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./estimation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tests-hypotheses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les tests d’hypothèses</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Les tests d’hypothèses</span></span></a>
   </div>
 </li>
       </ul>
@@ -240,17 +263,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table des matières</h2>
    
   <ul>
-  <li><a href="#lintervalle-de-confiance-sur-une-moyenne" id="toc-lintervalle-de-confiance-sur-une-moyenne" class="nav-link active" data-scroll-target="#lintervalle-de-confiance-sur-une-moyenne"><span class="header-section-number">6.1</span> L’intervalle de confiance sur une moyenne</a></li>
-  <li><a href="#lintervalle-de-confiance-sur-une-proportion" id="toc-lintervalle-de-confiance-sur-une-proportion" class="nav-link" data-scroll-target="#lintervalle-de-confiance-sur-une-proportion"><span class="header-section-number">6.2</span> L’intervalle de confiance sur une proportion</a></li>
+  <li><a href="#lintervalle-de-confiance-sur-une-moyenne" id="toc-lintervalle-de-confiance-sur-une-moyenne" class="nav-link active" data-scroll-target="#lintervalle-de-confiance-sur-une-moyenne"><span class="header-section-number">8.1</span> L’intervalle de confiance sur une moyenne</a></li>
+  <li><a href="#lintervalle-de-confiance-sur-une-proportion" id="toc-lintervalle-de-confiance-sur-une-proportion" class="nav-link" data-scroll-target="#lintervalle-de-confiance-sur-une-proportion"><span class="header-section-number">8.2</span> L’intervalle de confiance sur une proportion</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/desautm/statistiquesR/edit/main/estimation.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation.html">L’estimation et les tests d’hypothèses</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation.html">L’estimation et les tests d’hypothèses</a></li><li class="breadcrumb-item"><a href="./estimation.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span></h1>
+<h1 class="title"><span id="sec-estimation" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span></h1>
 </div>
 
 
@@ -272,8 +295,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gss)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="lintervalle-de-confiance-sur-une-moyenne" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="lintervalle-de-confiance-sur-une-moyenne"><span class="header-section-number">6.1</span> L’intervalle de confiance sur une moyenne</h2>
+<section id="lintervalle-de-confiance-sur-une-moyenne" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="lintervalle-de-confiance-sur-une-moyenne"><span class="header-section-number">8.1</span> L’intervalle de confiance sur une moyenne</h2>
 <p>Pour trouver un intervalle de confiance sur une moyenne, nous utilisons la fonction <code>t_test</code>.</p>
 <p>Les quatres arguments nécessaires sont:</p>
 <ul>
@@ -295,8 +318,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>La borne inférieure de l’intervalle de confiance est donnée par la variable <code>lower_ci</code> et la borne supérieure par la variable <code>upper_ci</code>. Dans notre test, nous avons donc un intervalle de confiance entre 39.095674 et 41.436326.</p>
 </section>
-<section id="lintervalle-de-confiance-sur-une-proportion" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="lintervalle-de-confiance-sur-une-proportion"><span class="header-section-number">6.2</span> L’intervalle de confiance sur une proportion</h2>
+<section id="lintervalle-de-confiance-sur-une-proportion" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="lintervalle-de-confiance-sur-une-proportion"><span class="header-section-number">8.2</span> L’intervalle de confiance sur une proportion</h2>
 <p>Pour trouver un intervalle de confiance sur une proportion, nous utilisons la fonction <code>prop_test</code>.</p>
 <p>Les cinq arguments nécessaires sont:</p>
 <ul>
@@ -753,12 +776,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./mesures.html" class="pagination-link" aria-label="Les mesures">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les mesures</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./tests-hypotheses.html" class="pagination-link" aria-label="Les tests d'hypothèses">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les tests d’hypothèses</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Les tests d’hypothèses</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

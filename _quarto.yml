@@ -24,6 +24,10 @@ book:
     collapse-level: 2
   chapters:
     - index.qmd
+    - part: "Le tidyverse"
+      chapters: 
+        - tidyverse.qmd
+        - filter.qmd
     - part: "Les probabilités et la combinatoire"
       chapters: 
         - combinatoire.qmd

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Les statistiques avec R – 3&nbsp; Les tableaux</title>
+<title>Les statistiques avec R – 5&nbsp; Les tableaux</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableaux.html">Les statistiques descriptives</a></li><li class="breadcrumb-item"><a href="./tableaux.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les tableaux</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableaux.html">Les statistiques descriptives</a></li><li class="breadcrumb-item"><a href="./tableaux.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les tableaux</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
@@ -187,7 +187,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Les probabilités et la combinatoire</span></a>
+ <span class="menu-text">Le tidyverse</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -195,14 +195,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./combinatoire.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La combinatoire</span></span></a>
+  <a href="./tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Le tidyverse</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lois_probabilites.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Les lois de probabilités</span></span></a>
+  <a href="./filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manipuler les données</span></span></a>
   </div>
 </li>
       </ul>
@@ -210,7 +210,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Les statistiques descriptives</span></a>
+ <span class="menu-text">Les probabilités et la combinatoire</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -218,20 +218,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tableaux.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></a>
+  <a href="./combinatoire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La combinatoire</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les graphiques</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mesures.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les mesures</span></span></a>
+  <a href="./lois_probabilites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les lois de probabilités</span></span></a>
   </div>
 </li>
       </ul>
@@ -239,7 +233,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">L’estimation et les tests d’hypothèses</span></a>
+ <span class="menu-text">Les statistiques descriptives</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -247,14 +241,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./tableaux.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Les graphiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mesures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les mesures</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">L’estimation et les tests d’hypothèses</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./estimation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">L’estimation de paramètres</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tests-hypotheses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Les tests d’hypothèses</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Les tests d’hypothèses</span></span></a>
   </div>
 </li>
       </ul>
@@ -269,15 +292,15 @@ window.Quarto = {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul>
-  <li><a href="#tableau-de-fréquences-à-une-variable" id="toc-tableau-de-fréquences-à-une-variable" class="nav-link active" data-scroll-target="#tableau-de-fréquences-à-une-variable"><span class="header-section-number">3.1</span> Tableau de fréquences à une variable</a>
+  <li><a href="#tableau-de-fréquences-à-une-variable" id="toc-tableau-de-fréquences-à-une-variable" class="nav-link active" data-scroll-target="#tableau-de-fréquences-à-une-variable"><span class="header-section-number">5.1</span> Tableau de fréquences à une variable</a>
   <ul class="collapse">
-  <li><a href="#les-variables-qualitatives" id="toc-les-variables-qualitatives" class="nav-link" data-scroll-target="#les-variables-qualitatives"><span class="header-section-number">3.1.1</span> Les variables qualitatives</a></li>
-  <li><a href="#les-variables-quantitatives-discrètes" id="toc-les-variables-quantitatives-discrètes" class="nav-link" data-scroll-target="#les-variables-quantitatives-discrètes"><span class="header-section-number">3.1.2</span> Les variables quantitatives discrètes</a></li>
-  <li><a href="#les-variables-quantitatives-continues" id="toc-les-variables-quantitatives-continues" class="nav-link" data-scroll-target="#les-variables-quantitatives-continues"><span class="header-section-number">3.1.3</span> Les variables quantitatives continues</a></li>
+  <li><a href="#les-variables-qualitatives" id="toc-les-variables-qualitatives" class="nav-link" data-scroll-target="#les-variables-qualitatives"><span class="header-section-number">5.1.1</span> Les variables qualitatives</a></li>
+  <li><a href="#les-variables-quantitatives-discrètes" id="toc-les-variables-quantitatives-discrètes" class="nav-link" data-scroll-target="#les-variables-quantitatives-discrètes"><span class="header-section-number">5.1.2</span> Les variables quantitatives discrètes</a></li>
+  <li><a href="#les-variables-quantitatives-continues" id="toc-les-variables-quantitatives-continues" class="nav-link" data-scroll-target="#les-variables-quantitatives-continues"><span class="header-section-number">5.1.3</span> Les variables quantitatives continues</a></li>
   </ul></li>
-  <li><a href="#tableau-de-fréquences-à-deux-variables" id="toc-tableau-de-fréquences-à-deux-variables" class="nav-link" data-scroll-target="#tableau-de-fréquences-à-deux-variables"><span class="header-section-number">3.2</span> Tableau de fréquences à deux variables</a>
+  <li><a href="#tableau-de-fréquences-à-deux-variables" id="toc-tableau-de-fréquences-à-deux-variables" class="nav-link" data-scroll-target="#tableau-de-fréquences-à-deux-variables"><span class="header-section-number">5.2</span> Tableau de fréquences à deux variables</a>
   <ul class="collapse">
-  <li><a href="#croisement-de-deux-variables-qualitatives" id="toc-croisement-de-deux-variables-qualitatives" class="nav-link" data-scroll-target="#croisement-de-deux-variables-qualitatives"><span class="header-section-number">3.2.1</span> Croisement de deux variables qualitatives</a></li>
+  <li><a href="#croisement-de-deux-variables-qualitatives" id="toc-croisement-de-deux-variables-qualitatives" class="nav-link" data-scroll-target="#croisement-de-deux-variables-qualitatives"><span class="header-section-number">5.2.1</span> Croisement de deux variables qualitatives</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/desautm/statistiquesR/edit/main/tableaux.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li></ul></div></nav>
@@ -285,9 +308,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableaux.html">Les statistiques descriptives</a></li><li class="breadcrumb-item"><a href="./tableaux.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les tableaux</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableaux.html">Les statistiques descriptives</a></li><li class="breadcrumb-item"><a href="./tableaux.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les tableaux</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-variablesqualitatives" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></h1>
+<h1 class="title"><span id="sec-variablesqualitatives" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les tableaux</span></span></h1>
 </div>
 
 
@@ -312,10 +335,10 @@ window.Quarto = {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(weather)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(flights)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="tableau-de-fréquences-à-une-variable" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="tableau-de-fréquences-à-une-variable"><span class="header-section-number">3.1</span> Tableau de fréquences à une variable</h2>
-<section id="les-variables-qualitatives" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="les-variables-qualitatives"><span class="header-section-number">3.1.1</span> Les variables qualitatives</h3>
+<section id="tableau-de-fréquences-à-une-variable" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="tableau-de-fréquences-à-une-variable"><span class="header-section-number">5.1</span> Tableau de fréquences à une variable</h2>
+<section id="les-variables-qualitatives" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="les-variables-qualitatives"><span class="header-section-number">5.1.1</span> Les variables qualitatives</h3>
 <p>Le tableau de fréquences que nous utiliserons est le suivant:</p>
 <table class="caption-top table">
 <colgroup>
@@ -370,8 +393,8 @@ window.Quarto = {
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Total         3322 100.0</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="les-variables-quantitatives-discrètes" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="les-variables-quantitatives-discrètes"><span class="header-section-number">3.1.2</span> Les variables quantitatives discrètes</h3>
+<section id="les-variables-quantitatives-discrètes" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="les-variables-quantitatives-discrètes"><span class="header-section-number">5.1.2</span> Les variables quantitatives discrètes</h3>
 <p>Le tableau de fréquences que nous utiliserons est le suivant :</p>
 <table class="caption-top table">
 <colgroup>
@@ -485,8 +508,8 @@ window.Quarto = {
 </div>
 <p>Comme nous pouvons le constater, le tableau est très grand car la variable <code>seats</code> possède 48 valeurs différentes.</p>
 </section>
-<section id="les-variables-quantitatives-continues" class="level3" data-number="3.1.3">
-<h3 data-number="3.1.3" class="anchored" data-anchor-id="les-variables-quantitatives-continues"><span class="header-section-number">3.1.3</span> Les variables quantitatives continues</h3>
+<section id="les-variables-quantitatives-continues" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="les-variables-quantitatives-continues"><span class="header-section-number">5.1.3</span> Les variables quantitatives continues</h3>
 <p>Le tableau de fréquences que nous utiliserons est le suivant :</p>
 <table class="caption-top table">
 <colgroup>
@@ -555,13 +578,13 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="tableau-de-fréquences-à-deux-variables" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="tableau-de-fréquences-à-deux-variables"><span class="header-section-number">3.2</span> Tableau de fréquences à deux variables</h2>
+<section id="tableau-de-fréquences-à-deux-variables" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="tableau-de-fréquences-à-deux-variables"><span class="header-section-number">5.2</span> Tableau de fréquences à deux variables</h2>
 <p>Faire une analyse bivariée, c’est étudier la relation entre deux variables&nbsp;: sont-elles liées ? les valeurs de l’une influencent-elles les valeurs de l’autre ? ou sont-elles au contraire indépendantes ?</p>
 <p>À noter qu’on va parler ici d’influence ou de lien, mais pas de relation de cause à effet. Les outils présentés permettent de visualiser ou de déterminer une relation, mais la mise en évidence de liens de causalité proprement dit est nettement plus complexe : il faut en effet vérifier que c’est bien telle variable qui influence telle autre et pas l’inverse, qu’il n’y a pas de “variable cachée”, etc.</p>
 <p>Là encore, le type d’analyse ou de visualisation est déterminé par la nature qualitative ou quantitative des deux variables.</p>
-<section id="croisement-de-deux-variables-qualitatives" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="croisement-de-deux-variables-qualitatives"><span class="header-section-number">3.2.1</span> Croisement de deux variables qualitatives</h3>
+<section id="croisement-de-deux-variables-qualitatives" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="croisement-de-deux-variables-qualitatives"><span class="header-section-number">5.2.1</span> Croisement de deux variables qualitatives</h3>
 <p>On continue à travailler avec le jeu de données tiré de l’enquête <em>Histoire de vie</em> inclus dans l’extension <code>questionr</code>. On commence donc par charger l’extension, le jeu de données, et à le renommer en un nom plus court pour gagner un peu de temps de saisie au clavier.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(questionr)</span>
@@ -1040,12 +1063,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./lois_probabilites.html" class="pagination-link" aria-label="Les lois de probabilités">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Les lois de probabilités</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les lois de probabilités</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./ggplot2.html" class="pagination-link" aria-label="Les graphiques">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les graphiques</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Les graphiques</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
